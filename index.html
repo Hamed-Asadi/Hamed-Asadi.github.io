@@ -61,11 +61,12 @@
 
 <body>
   <div class="wrap">
-<div style="text-align:center; margin-top:10px; margin-bottom:12px;">
-  <img src="assets/profile.jpg" alt="Hamed Asadi"
-       style="width:140px; border-radius:50%; border:1px solid #e5e7eb;">
-</div>
 
+    <!-- PHOTO -->
+    <div style="text-align:center; margin-top:10px; margin-bottom:12px;">
+      <img src="assets/profile.jpg" alt="Hamed Asadi"
+           style="width:140px; border-radius:50%; border:1px solid #e5e7eb;">
+    </div>
 
     <!-- HEADER -->
     <h1>Hamed Asadi</h1>
@@ -74,7 +75,7 @@
       Climate Change · Biodiversity · GIS & Spatial Modeling
     </div>
 
-    <p class="small">
+    <p class="small" style="text-align:center;">
       <a href="mailto:hamed.asadi.env@gmail.com">hamed.asadi.env@gmail.com</a> ·
       <a href="https://scholar.google.com/citations?user=C6w1cbcAAAAJ&hl=en" target="_blank">Google Scholar</a> ·
       <a href="https://orcid.org/0000-0003-0435-5733" target="_blank">ORCID</a> ·
@@ -83,11 +84,12 @@
     </p>
 
     <!-- NAV -->
-    <nav>
+    <nav style="text-align:center;">
       <a href="#about">About</a>
       <a href="#research">Research</a>
       <a href="#publications">Publications</a>
       <a href="#skills">Skills</a>
+      <a href="#honors">Honors</a>
       <a href="#service">Academic Service</a>
       <a href="#cv">CV</a>
       <a href="#contact">Contact</a>
@@ -107,20 +109,22 @@
         I am currently seeking PhD opportunities in Australia or New Zealand within research
         groups that value data-driven, applied environmental research with real-world impact.
       </p>
+      <p class="small">
+        Research focus: R-based SDMs (CMIP6 scenarios) + GIS decision frameworks (MCDA) for conservation and planning.
+      </p>
     </section>
 
     <!-- RESEARCH -->
     <section id="research">
-  <h2>Research Interests</h2>
-  <ul>
-    <li><b>Climate change impacts on biodiversity</b> (quantitative modelling and scenario-based assessment)</li>
-    <li><b>Species distribution modelling (SDMs)</b> and climate refugia (ensemble approaches, uncertainty-aware outputs)</li>
-    <li><b>GIS-based spatial analysis</b> for conservation planning and gap assessment</li>
-    <li><b>Spatial decision-making</b> using MCDA (e.g., DANP, OWA) for environmental planning</li>
-    <li><b>Sustainable land-use and ecotourism planning</b> (site suitability and evidence-based prioritisation)</li>
-  </ul>
-</section>
-
+      <h2>Research Interests</h2>
+      <ul>
+        <li><b>Climate change impacts on biodiversity</b> (quantitative modelling and scenario-based assessment)</li>
+        <li><b>Species distribution modelling (SDMs)</b> and climate refugia (ensemble approaches, uncertainty-aware outputs)</li>
+        <li><b>GIS-based spatial analysis</b> for conservation planning and gap assessment</li>
+        <li><b>Spatial decision-making</b> using MCDA (e.g., DANP, OWA) for environmental planning</li>
+        <li><b>Sustainable land-use and ecotourism planning</b> (site suitability and evidence-based prioritisation)</li>
+      </ul>
+    </section>
 
     <!-- PUBLICATIONS -->
     <section id="publications">
@@ -128,15 +132,19 @@
       <ul>
         <li>
           Ahmadi, M., Nawaz, M. A., <b>Asadi, H.</b>, et al. (2024).
-          <i>Protecting alpine biodiversity in the Middle East from climate change:
-          Implications for high-elevation birds.</i>
+          <i>Protecting alpine biodiversity in the Middle East from climate change: Implications for high-elevation birds.</i>
           Diversity and Distributions.
+          <span class="small">[</span>
+          <a href="https://doi.org/10.1111/ddi.13826" target="_blank">DOI</a>
+          <span class="small">]</span>
         </li>
         <li>
           <b>Asadi, H.</b>* , Soffianian, A., Hemami, M.-R., et al. (2022).
-          <i>A hybrid GIS-OWA and DANP method for the identification and evaluation
-          of ecotourism attractions.</i>
+          <i>A hybrid GIS-OWA and DANP method for the identification and evaluation of ecotourism attractions.</i>
           GeoJournal (Springer).
+          <span class="small">[</span>
+          <a href="https://doi.org/10.1007/s10708-021-10564-6" target="_blank">DOI</a>
+          <span class="small">]</span>
         </li>
       </ul>
     </section>
@@ -153,45 +161,40 @@
     </section>
 
     <!-- HONORS -->
-<section id="honors">
-  <h2>Honors & Certifications</h2>
-  <ul>
-    <li><b>Ranked 18th</b> among &gt;3300 participants in the Iranian National MSc Entrance Exam (2013)</li>
-    <li>Selected as an <b>Exceptionally Talented Student</b> (2013)</li>
-    <li><b>PTE Academic:</b> Overall 80 (Speaking 90, Writing 74) – Valid until Dec 2027</li>
-    <li>Certificates: Data Manipulation in R; Data Visualization in R; R Programming; Intro Python; GIS/ENVI; HSE</li>
-  </ul>
-</section>
+    <section id="honors">
+      <h2>Honors & Certifications</h2>
+      <ul>
+        <li><b>Ranked 18th</b> among &gt;3300 participants in the Iranian National MSc Entrance Exam (2013)</li>
+        <li>Selected as an <b>Exceptionally Talented Student</b> (2013)</li>
+        <li><b>PTE Academic:</b> Overall 80 (Speaking 90, Writing 74) – Valid until Dec 2027</li>
+        <li>Certificates: Data Manipulation in R; Data Visualization in R; R Programming; Intro Python; GIS/ENVI; HSE</li>
+      </ul>
+    </section>
 
     <!-- SERVICE -->
     <section id="service">
       <h2>Academic Service</h2>
       <p>
-        Peer Reviewer for international peer-reviewed journals in environmental science
-        and ecology.
+        Peer Reviewer for international peer-reviewed journals in environmental science and ecology.
       </p>
       <p class="small">
-        ORCID: <a href="https://orcid.org/0000-0003-0435-5733" target="_blank">
-        0000-0003-0435-5733</a>
+        ORCID: <a href="https://orcid.org/0000-0003-0435-5733" target="_blank">0000-0003-0435-5733</a>
       </p>
     </section>
 
     <!-- CV -->
     <section id="cv">
-  <h2>Curriculum Vitae</h2>
-  <p class="small">
-    Academic CV (3 pages) – includes research profile, publications, methods & tools (R/GIS/SDMs), and academic service.
-  </p>
-  <p>
-    <a href="assets/Hamed_Asadi_CV_AUNZ_TNR.pdf">Download Academic CV (PDF)</a>
-    <span class="small"> · </span>
-  
-  </p>
-  <p class="small">
-    English Proficiency: PTE Academic (Overall 80, valid until Dec 2027)
-  </p>
-</section>
-
+      <h2>Curriculum Vitae</h2>
+      <p class="small">
+        Academic CV (3 pages) – includes research profile, publications, methods & tools (R/GIS/SDMs), and academic service.
+      </p>
+      <p>
+        <a href="assets/Hamed_Asadi_CV_AUNZ_TNR.pdf">Download Academic CV (PDF)</a>
+      </p>
+      <p class="small">
+        English Proficiency: PTE Academic (Overall 80, valid until Dec 2027)
+      </p>
+    </section>
 
     <!-- CONTACT -->
     <section id="contact">
@@ -202,7 +205,7 @@
       </p>
     </section>
 
-    <p class="small" style="margin-top:30px;">
+    <p class="small" style="margin-top:30px; text-align:center;">
       © 2026 Hamed Asadi
     </p>
 
