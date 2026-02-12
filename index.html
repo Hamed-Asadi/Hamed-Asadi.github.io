@@ -37,15 +37,30 @@
       border-radius: 10px;
       font-size: 14px;
     }
+
+    /* UPDATED: cleaner, more “card-like” sections */
     section {
-      margin-top: 28px;
-      background: #f6f7f9;
-      padding: 18px;
-      border-radius: 14px;
+      margin-top: 32px;
+      background: #ffffff;
+      padding: 22px 24px;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      border: 1px solid #e5e7eb;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
+    section:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.08);
+    }
+
+    /* UPDATED: headings slightly more polished */
     h2 {
       margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 20px;
+      letter-spacing: 0.5px;
     }
+
     a {
       color: #0b57d0;
     }
@@ -55,6 +70,12 @@
     .small {
       color: #666;
       font-size: 14px;
+    }
+
+    /* OPTIONAL highlight style (used only for About) */
+    .highlight {
+      background: linear-gradient(145deg, #ffffff, #f8fafc);
+      border-left: 4px solid #0b57d0;
     }
   </style>
 </head>
@@ -102,7 +123,7 @@
     </nav>
 
     <!-- ABOUT -->
-    <section id="about">
+    <section id="about" class="highlight">
       <h2>About</h2>
       <p>
         I hold an MSc in Environmental Engineering with a research background in climate change impact assessment,
@@ -118,6 +139,15 @@
       <p class="small">
         Current focus: R-based modelling workflows (SDMs + CMIP6 scenarios) and GIS decision frameworks (MCDA) for conservation planning.
       </p>
+    </section>
+
+    <!-- PERSONAL INTERESTS -->
+    <section id="personal">
+      <h2>Personal Interests</h2>
+      <ul>
+        <li><b>Strength training & swimming:</b> Regular gym training and swimming; I also informally coach and guide others in fitness and basic technique development.</li>
+        <li><b>Mountain hiking & field exploration:</b> Strong interest in mountainous landscapes, field-based ecological observation, and experiencing environmental gradients in real-world settings.</li>
+      </ul>
     </section>
 
     <!-- RESEARCH -->
@@ -164,6 +194,7 @@
         <li><b>GIS & Spatial Analysis:</b> ArcGIS, spatial modelling, suitability mapping, environmental layer processing</li>
         <li><b>Modelling:</b> SDMs and climate-driven ecological analysis; CMIP6 climate scenarios (SSP2-4.5, SSP5-8.5)</li>
         <li><b>Decision-Support:</b> MCDA (DEMATEL, DANP, OWA) for structured spatial prioritisation</li>
+        <li><b>Languages:</b> Kurdish (native), Persian (native), English (fluent)</li>
       </ul>
     </section>
 
@@ -187,6 +218,22 @@
       <p class="small">
         ORCID: <a href="https://orcid.org/0000-0003-0435-5733" target="_blank">0000-0003-0435-5733</a>
       </p>
+    </section>
+
+    <!-- EDUCATION (ADDED AS REQUESTED) -->
+    <section id="education">
+      <h2>Education</h2>
+
+      <p style="margin-bottom:6px;"><b>MSc, Natural Resources Engineering – Environmental Sciences</b> — Isfahan University of Technology, Iran (2013–2016)</p>
+      <p style="margin-top:0; margin-bottom:6px;"><b>Thesis:</b> Evaluating the ecotourism attractions of Abbas Abad Wildlife Refuge</p>
+      <p style="margin-top:0; margin-bottom:6px;"><b>Methods:</b> GIS–MCDA (DANP, OWA), spatial suitability mapping</p>
+      <p style="margin-top:0;" class="small"><b>GPA:</b> 15.88/20 | <b>Thesis Grade:</b> 19.62/20</p>
+
+      <hr style="border:none; border-top:1px solid #e5e7eb; margin:14px 0;">
+
+      <p style="margin-bottom:6px;"><b>BSc, Natural Resources Engineering – Environmental Sciences</b> — University of Guilan, Iran (2009–2013)</p>
+      <p style="margin-top:0; margin-bottom:6px;"><b>Project:</b> Analysis of five production wastes in Songor city</p>
+      <p style="margin-top:0;" class="small"><b>GPA:</b> 15.83/20 | <b>Project Grade:</b> 19/20</p>
     </section>
 
     <!-- CV -->
