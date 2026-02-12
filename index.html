@@ -55,21 +55,34 @@
       color: #93c5fd;
     }
 
-    /* UPDATED: subtle page section background feel */
+    /* ✅ (2) Page background vs card background: cards slightly darker/bolder */
     section {
       margin-top: 32px;
       padding: 22px 24px;
       border-radius: 18px;
-      border: 1px solid #e5e7eb;
+
+      /* ✅ (3) left “accent bar” to make cards visually distinct */
+      border-left: 6px solid #0b57d0;
+
+      /* ✅ (2) stronger background than page background */
+      background: #f1f5f9;
+
+      /* subtle border + shadow */
+      border-top: 1px solid #e5e7eb;
+      border-right: 1px solid #e5e7eb;
+      border-bottom: 1px solid #e5e7eb;
       box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+
       transition: transform 0.2s ease, box-shadow 0.2s ease;
-      background: linear-gradient(145deg, #ffffff, #f5f7fb); /* ✅ slightly different background */
     }
 
     body.dark section {
-      border: 1px solid #334155;
+      background: #1e293b;
+      border-top: 1px solid #334155;
+      border-right: 1px solid #334155;
+      border-bottom: 1px solid #334155;
+      border-left: 6px solid #3b82f6;
       box-shadow: none;
-      background: linear-gradient(145deg, #1e293b, #0f172a); /* ✅ subtle dark gradient */
     }
 
     section:hover {
@@ -98,12 +111,12 @@
 
     /* About highlight stays a bit more prominent */
     .highlight {
-      background: linear-gradient(145deg, #ffffff, #eef5ff);
-      border-left: 4px solid #0b57d0;
+      background: #eaf2ff;           /* stronger highlight */
+      border-left: 6px solid #0b57d0; /* keep same bar, but consistent thickness */
     }
     body.dark .highlight {
-      background: linear-gradient(145deg, #1e293b, #111827);
-      border-left: 4px solid #3b82f6;
+      background: #111827;
+      border-left: 6px solid #3b82f6;
     }
 
     /* Toggle Button */
@@ -122,6 +135,47 @@
       z-index: 10;
     }
     body.dark .toggle-btn { background: #3b82f6; }
+
+    /* ✅ (1) Click-to-zoom photo (lightbox) */
+    .photo-thumb {
+      width: 140px;
+      border-radius: 50%;
+      border: 1px solid #e5e7eb;
+      cursor: zoom-in;
+      transition: transform 0.15s ease;
+    }
+    .photo-thumb:hover { transform: scale(1.02); }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .lightbox.open { display: flex; }
+
+    .lightbox img {
+      max-width: min(720px, 92vw);
+      max-height: 92vh;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.2);
+      box-shadow: 0 18px 60px rgba(0,0,0,0.35);
+      background: #fff;
+    }
+
+    .lightbox-hint {
+      position: absolute;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,0.85);
+      font-size: 13px;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
   </style>
 </head>
 
@@ -129,20 +183,59 @@
 
 <button class="toggle-btn" onclick="toggleMode()">🌙 Dark</button>
 
+<!-- ✅ Lightbox container -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+  <img id="lightboxImg" src="" alt="Hamed Asadi (large view)">
+  <div class="lightbox-hint">Click anywhere outside the image to close · Press ESC</div>
+</div>
+
 <script>
   function toggleMode() {
     document.body.classList.toggle("dark");
     const btn = document.querySelector(".toggle-btn");
     btn.innerHTML = document.body.classList.contains("dark") ? "☀️ Light" : "🌙 Dark";
   }
+
+  // ✅ Open/close photo lightbox
+  function openLightbox(src) {
+    const lb = document.getElementById("lightbox");
+    const img = document.getElementById("lightboxImg");
+    img.src = src;
+    lb.classList.add("open");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeLightbox(e) {
+    // close only if clicking outside the image
+    if (e.target.id === "lightbox") {
+      document.getElementById("lightbox").classList.remove("open");
+      document.body.style.overflow = "";
+    }
+  }
+
+  // ESC closes
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      const lb = document.getElementById("lightbox");
+      if (lb.classList.contains("open")) {
+        lb.classList.remove("open");
+        document.body.style.overflow = "";
+      }
+    }
+  });
 </script>
 
 <div class="wrap">
 
   <!-- PHOTO -->
   <div style="text-align:left; margin-top:10px; margin-bottom:12px;">
-    <img src="assets/profile.jpg" alt="Hamed Asadi"
-         style="width:140px; border-radius:50%; border:1px solid #e5e7eb;">
+    <img
+      src="assets/profile.jpg"
+      alt="Hamed Asadi"
+      class="photo-thumb"
+      onclick="openLightbox(this.src)"
+      title="Click to enlarge"
+    >
   </div>
 
   <!-- HEADER -->
@@ -179,7 +272,7 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <!-- ✅ MOVED UP: EDUCATION (NOW BEFORE ABOUT) -->
+  <!-- EDUCATION -->
   <section id="education">
     <h2>Education</h2>
 
