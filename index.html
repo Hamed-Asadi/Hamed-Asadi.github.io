@@ -176,6 +176,14 @@
       font-size: 13px;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     }
+
+    /* ✅ ONLY ADDED: make thesis/project grade more visually bold */
+    .grade-strong {
+      font-weight: 800;
+      font-size: 15px;
+      color: #0b57d0;
+    }
+    body.dark .grade-strong { color: #93c5fd; }
   </style>
 </head>
 
@@ -272,22 +280,6 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <!-- EDUCATION -->
-  <section id="education">
-    <h2>Education</h2>
-
-    <p style="margin-bottom:6px;"><b>MSc, Natural Resources Engineering – Environmental Sciences</b> — Isfahan University of Technology, Iran (2013–2016)</p>
-    <p style="margin-top:0; margin-bottom:6px;"><b>Thesis:</b> Evaluating the ecotourism attractions of Abbas Abad Wildlife Refuge</p>
-    <p style="margin-top:0; margin-bottom:6px;"><b>Methods:</b> GIS–MCDA (DANP, OWA), spatial suitability mapping</p>
-    <p style="margin-top:0;" class="small"><b>GPA:</b> 15.88/20 | <b>Thesis Grade:</b> 19.62/20</p>
-
-    <hr style="border:none; border-top:1px solid #e5e7eb; margin:14px 0;">
-
-    <p style="margin-bottom:6px;"><b>BSc, Natural Resources Engineering – Environmental Sciences</b> — University of Guilan, Iran (2009–2013)</p>
-    <p style="margin-top:0; margin-bottom:6px;"><b>Project:</b> Analysis of five production wastes in Songor city</p>
-    <p style="margin-top:0;" class="small"><b>GPA:</b> 15.83/20 | <b>Project Grade:</b> 19/20</p>
-  </section>
-
   <!-- ABOUT -->
   <section id="about" class="highlight">
     <h2>About</h2>
@@ -327,6 +319,22 @@
       <li><b>Structured spatial decision-support</b> using MCDA (e.g., DANP, OWA) for environmental management</li>
       <li><b>Sustainable land-use & ecotourism planning</b> (optional; suitability mapping and evidence-based prioritisation)</li>
     </ul>
+  </section>
+
+  <!-- ✅ EDUCATION MOVED HERE (AFTER ABOUT + RESEARCH) -->
+  <section id="education">
+    <h2>Education</h2>
+
+    <p style="margin-bottom:6px;"><b>MSc, Natural Resources Engineering – Environmental Sciences</b> — Isfahan University of Technology, Iran (2013–2016)</p>
+    <p style="margin-top:0; margin-bottom:6px;"><b>Thesis:</b> Evaluating the ecotourism attractions of Abbas Abad Wildlife Refuge</p>
+    <p style="margin-top:0; margin-bottom:6px;"><b>Methods:</b> GIS–MCDA (DANP, OWA), spatial suitability mapping</p>
+    <p style="margin-top:0;" class="small"><b>GPA:</b> 15.88/20 | <span class="grade-strong">Thesis Grade: 19.62/20</span></p>
+
+    <hr style="border:none; border-top:1px solid #e5e7eb; margin:14px 0;">
+
+    <p style="margin-bottom:6px;"><b>BSc, Natural Resources Engineering – Environmental Sciences</b> — University of Guilan, Iran (2009–2013)</p>
+    <p style="margin-top:0; margin-bottom:6px;"><b>Project:</b> Analysis of five production wastes in Songor city</p>
+    <p style="margin-top:0;" class="small"><b>GPA:</b> 15.83/20 | <span class="grade-strong">Project Grade: 19/20</span></p>
   </section>
 
   <!-- PUBLICATIONS -->
